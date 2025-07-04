@@ -65,7 +65,6 @@
  * A more robust driver would allow these to be configured by the user 
  */
 
-const uint8_t VAL_INT_CONFIG = 0b00000010; // Set to push pull mode (because we don't have a pull up resistor, and this is the only device on the MCU int pin)
 const uint8_t VAL_PWR_MGMT0 = 0b00001111; // Turn accel and gyro on in low noise mode
 
 /*
@@ -94,9 +93,6 @@ const uint8_t VAL_ACCEL_CONFIG0 = 0b00100101; // Accel FS=+-8g, ODR = 1600Hz (fa
 #define GYRO_SENS 32.8
 const uint8_t VAL_GYRO_CONFIG1 = 0b00000000; // TODO: LOW PASS FILTER SETUP
 const uint8_t VAL_ACCEL_CONFIG1 = 0b00000000; // TODO: LOW PASS FILTER SETUP. Also overaging set to default, because we aren't using low power mode
-
-const uint8_t VAL_INT_SOURCE0 = 0b00001000; // route data ready interrupt to INT1
-const uint8_t VAL_INTF_CONFIG0 = 0b00000000; // we don't use this. Leave as little endian as this is the standard for embedded applications it seems.
 
 #define GYRO_ACCEL_REG_SIZE 12 // Size of gyro and accel registers, used for reading them in the data_read_task
 
@@ -130,26 +126,20 @@ uint8_t reg_read(icm_42670_p *icm, uint8_t reg_addr, uint8_t len, uint8_t *buf);
 uint8_t reg_write(icm_42670_p *icm, uint8_t reg_addr, uint8_t len, uint8_t *buf);
 
 /**
- * @brief  Performs basic set up for the ICM-42670-P, and initialises the object
+ * @brief   Performs basic set up for the ICM-42670-P, and initialises the object
  *
  * @param[in,out]   *icm        Pointer to the ICM object to initialise
- * @param[in]       INT_PIN     Interrupt pin 
  * @param[in]       CS_PIN      Chip Select pin
  * @return  0 to indicate success, -1 for error.
  */
-uint8_t icm_initialise(icm_42670_p *icm, const uint8_t INT_PIN, const uint8_t CS_PIN);
-
-/**
- * @brief  ISR for the fifo_ready interrupt. Yields the fifo_read semaphore, allowing the FIFO to be read by fifo_read_task.
- *
- */
+uint8_t icm_initialise(icm_42670_p *icm, const uint8_t CS_PIN);
 
  /**
-  * @brief  Reads a packet from the FIFO, and updates the ICM state with the gyro and accelerometer measurements
+  * @brief   Reads data from the gyroscope and accelerometer, and updates the global ICM object 
   *
-  * @param[in] arg FreeRTOS task argument. In this task it is used to pass the global ICM object.
+  * @param[in,out]   *icm        Pointer to the ICM object to initialise
   */
-void data_read_task(void *arg);
+void read_sensor_data(icm_42670_p *icm);
 
 
 
