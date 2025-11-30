@@ -1,0 +1,32 @@
+### Footprint positions - created on 2025-05-26T17:11:13+0100 ###
+### Printed by KiCad version 9.0.2
+## Unit = mm, Angle = deg.
+## Side : All
+# Ref     Val          Package                                     PosX       PosY       Rot  Side
+C1        100n         C_0603_1608Metric                        28.8350     5.6000    0.0000  top
+C2        100n         C_0603_1608Metric                        25.4600     3.9500  180.0000  top
+C3        10n          C_0402_1005Metric                        25.5400    16.5800  180.0000  top
+C4        100n         C_0402_1005Metric                        23.2100    15.7300   90.0000  top
+C5        2u2          C_0603_1608Metric                        21.5350    15.7550   90.0000  top
+D1        D_Small      D_SOD-123                                 9.0000    25.0000    0.0000  top
+D2        D_Small      D_SOD-123                                48.2100    25.0000    0.0000  top
+D3        D_Small      D_SOD-123                                 9.0000     9.0000    0.0000  top
+D4        D_Small      D_SOD-123                                48.2100     9.0000    0.0000  top
+D5        D_TVS        D_SMA                                    55.0000    17.0000  -90.0000  top
+FID1      Fiducial     Fiducial_1mm_Mask2mm                     61.2100    32.0000    0.0000  top
+FID2      Fiducial     Fiducial_1mm_Mask2mm                     61.2100     2.2500    0.0000  top
+FID3      Fiducial     Fiducial_1mm_Mask2mm                      2.2500    31.7500    0.0000  top
+J2        TO_XIAO      JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical    43.2100    16.0000   90.0000  top
+Q1        NMOS         DMN1019USN                               10.7500    21.5500   90.0000  top
+Q2        NMOS         DMN1019USN                               52.4100    23.6000   90.0000  top
+Q3        NMOS         DMN1019USN                               10.6500    12.8000  -90.0000  top
+Q4        NMOS         DMN1019USN                               52.6600    10.2000  -90.0000  top
+R1        10k          R_0603_1608Metric                        11.7000    18.0000    0.0000  top
+R2        10k          R_0603_1608Metric                        49.5100    21.6250  -90.0000  top
+R3        10k          R_0603_1608Metric                        11.7000    15.9000  180.0000  top
+R4        10k          R_0603_1608Metric                        48.8100    12.1000  -90.0000  top
+R5        10k          R_0402_1005Metric                        22.5600    12.8450    0.0000  top
+R6        10k          R_0402_1005Metric                        20.9600    13.2450  -90.0000  top
+U1        BMP390       BMP390                                   25.8600     6.0000  -90.0000  top
+U2        ICM-42670-P  ICM-42670-P                              25.5600    14.4800  180.0000  top
+## End

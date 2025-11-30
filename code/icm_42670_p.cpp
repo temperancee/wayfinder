@@ -1,3 +1,4 @@
+#include "esp32-hal-gpio.h"
 #include "icm_42670_p.h"
 #include "Arduino.h"
 #include "HardwareSerial.h"
