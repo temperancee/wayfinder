@@ -1,2 +1,2 @@
-default_fqbn: esp32:esp32:XIAO_ESP32S3
-default_port: /dev/ttyUSB0
+default_fqbn: arduino:avr:uno
+default_port: /dev/ttyACM0

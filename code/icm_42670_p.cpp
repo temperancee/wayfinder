@@ -56,12 +56,10 @@ uint8_t icm_initialise(icm_42670_p *icm, const uint8_t CS_PIN)
     /* Initialise icm mutex */
     icm->mutex = xSemaphoreCreateMutex();
 
-    // TODO: Change to data read reg config 
     reg_write(icm, PWR_MGMT0, 1, &VAL_PWR_MGMT0); // Turn on the accel and gyro
     vTaskDelay(300 / portTICK_PERIOD_MS); // The datasheet says not to write to any register for 200us after turning the gyro and accel on
     reg_write(icm, GYRO_CONFIG0, 1, &VAL_GYRO_CONFIG0); // Configure Gyro FS and ODR
     reg_write(icm, ACCEL_CONFIG0, 1, &VAL_ACCEL_CONFIG0); // Configure Accel FS and ODR
-    // TODO: Low pass filter goes here
 
     /* Check if we can read whoami register. If not, return error */
     uint8_t who_am_i;
